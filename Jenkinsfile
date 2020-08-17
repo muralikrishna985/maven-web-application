@@ -13,7 +13,7 @@ node
   
  
  stage('checkoutcode')
-{git branch: 'development', credentialsId: 'git', url: 'https://github.com/muralikrishna985/maven-altran.git'}
+{git branch: 'development', credentialsId: 'git', url: 'https://github.com/muralikrishna985/maven-web-application.git'}
 
 stage('build')
 {sh "${mavenhome}/bin/mvn clean package"}
