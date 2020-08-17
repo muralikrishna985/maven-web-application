@@ -13,15 +13,14 @@ node
   
 //properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2')), pipelineTriggers([pollSCM('* * * * *')])])
   
-  stage("CheckOutCodeGit")
-  {
-   git branch: 'development', credentialsId: '65fb834f-a83b-4fe7-8e11-686245c47a65', url: 'https://github.com/MithunTechnologiesDevOps/maven-web-application.git'
- }
- 
- stage("Build")
- {
- sh "${mavenHome}/bin/mvn clean package"
- }
+ stage('checkoutcode')
+{git branch: 'development', credentialsId: 'git', url: 'https://github.com/muralikrishna985/maven-altran.git'
+}
+
+stage('build')
+{
+sh "${mavenhome}/bin/mvn clean package"
+}
  
   /*
  stage("ExecuteSonarQubeReport")
