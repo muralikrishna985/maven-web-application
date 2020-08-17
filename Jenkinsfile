@@ -16,7 +16,7 @@ node
 {git branch: 'master', credentialsId: 'git', url: 'https://github.com/muralikrishna985/maven-web-application.git'}
 
 stage('build')
-{sh "${mavenhome}/bin/mvn clean package"}
+{sh "${mavenHome}/bin/mvn clean package"}
  
 /*
  stage("ExecuteSonarQubeReport")
