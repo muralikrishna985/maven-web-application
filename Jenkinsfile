@@ -11,18 +11,14 @@ node
       echo "Jenkins URL ${env.JENKINS_URL}"
       echo "JOB Name ${env.JOB_NAME}"
   
-//properties([[$class: 'JiraProjectProperty'], buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '2', daysToKeepStr: '', numToKeepStr: '2')), pipelineTriggers([pollSCM('* * * * *')])])
-  
+ 
  stage('checkoutcode')
-{git branch: 'development', credentialsId: 'git', url: 'https://github.com/muralikrishna985/maven-altran.git'
-}
+{git branch: 'development', credentialsId: 'git', url: 'https://github.com/muralikrishna985/maven-altran.git'}
 
 stage('build')
-{
-sh "${mavenhome}/bin/mvn clean package"
-}
+{sh "${mavenhome}/bin/mvn clean package"}
  
-  /*
+/*
  stage("ExecuteSonarQubeReport")
  {
  sh "${mavenHome}/bin/mvn sonar:sonar"
