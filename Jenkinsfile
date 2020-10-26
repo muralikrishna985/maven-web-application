@@ -12,11 +12,13 @@ node
       echo "JOB Name ${env.JOB_NAME}"
   
  
- stage('checkoutcode')
-{git branch: 'master', credentialsId: 'git', url: 'https://github.com/muralikrishna985/maven-web-application.git'}
-
+stage('checkoutcode')
+{
+git branch: 'development', credentialsId: '3620f580-d3ca-4f5d-8d66-3f0956472699', url: 'https://github.com/Murali-Grahitha-org/maven-web-application.git'
+}
 stage('build')
-{sh "${mavenHome}/bin/mvn clean package"}
+{
+sh "${mavenhome}/bin/mvn clean package"
  
 /*
  stage("ExecuteSonarQubeReport")
